@@ -4,13 +4,23 @@ on:
             - main
 
 jobs:
-    greet:
-        runs-on: ubuntu-latest
-        steps:
-            - name: checkout code
-              uses: actions/checkout@v2
-            
-            - name: say hello
-              run: echo "Hello, World!"
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: echo "Hello, world!"
+
+      - name: Print date and time
+        run: date
+
+      - name: Print Branch Name
+        run: echo "Branch name is ${{ github.ref_name }}"
+
+      - name: List Files in Repository
+        run: ls -la
+
+      - name: Print Runner Operating System
+        run: echo "Runner OS is $RUNNER_OS"
+
              
 
